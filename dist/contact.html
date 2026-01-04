@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us - ASIANTON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+      * {
+        font-family: "Manrope", sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Manrope", sans-serif;
+      }
+
+      /* Updated to match index page color palette */
+
+      :root {
+        --primary: #00a7e1;
+        --primary-dark: #0090c8;
+        --secondary: #f8f9fa;
+        --dark-bg: #3a3a3a;
+        --darker-bg: #2a2a2a;
+        --text-dark: #1a1a1a;
+        --text-light: #666666;
+        --border-color: #e5e5e5;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up {
+        animation: fadeUp 0.9s ease both;
+      }
+
+      .fade-down {
+        animation: fadeDown 0.9s ease both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.15s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.3s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.45s;
+      }
+
+      .hover-lift {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 167, 225, 0.25);
+      }
+
+      /* Updated button to turkuaz color */
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: scale(1.05);
+      }
+
+      input,
+      textarea,
+      select {
+        border: 1px solid #e5e7eb;
+        transition: all 0.25s ease;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 167, 225, 0.15);
+      }
+
+      .nav-link {
+        position: relative;
+        color: var(--text-dark);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Contact card styling */
+
+      .contact-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 32px 28px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          var(--primary),
+          var(--primary-dark)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .contact-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(0, 167, 225, 0.12);
+        border-color: var(--primary);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
+      <div
+        class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16"
+      >
+        <a href="index.html" class="text-2xl font-bold">
+          ASIA<span style="color: var(--primary)">N</span>TON
+        </a>
+
+        <div class="hidden md:flex gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <button class="btn-primary px-6 py-2 rounded-full">Get in Touch</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="py-16 md:py-20 text-center">
+      <h1 class="text-5xl font-bold mb-6 fade-down">
+        Let's
+        <span style="color: var(--primary)">Connect</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-gray-600 fade-up delay-1 text-lg">
+        Have a specialized trade need? Our team is ready to discuss how Asianton
+        can support your global commerce goals.
+      </p>
+    </section>
+
+    <!-- Contact Information Section - Uncommented and updated -->
+    <!-- <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-5">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20"
+        >
+          <div class="contact-card fade-up">
+            <div
+              class="mb-6 h-40 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-4xl mb-2" style="color: var(--primary)">↗</div>
+                <h3 class="text-xl font-bold" style="color: var(--primary)">
+                  Far East
+                </h3>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">
+              <span style="color: var(--primary)">Far</span> East Office
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Shanghai, China - Primary hub for manufacturing and export
+            </p>
+            <div class="space-y-4 text-gray-700">
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="font-medium">
+                  <a
+                    href="mailto:fareast@asianton.com"
+                    class="hover:text-[var(--primary)] transition"
+                    >fareast@asianton.com</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Phone</p>
+                <p class="font-medium">+86 (21) 6000 0000</p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="contact-card fade-up delay-1">
+            <div
+              class="mb-6 h-40 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-4xl mb-2" style="color: var(--primary)">↗</div>
+                <h3 class="text-xl font-bold" style="color: var(--primary)">
+                  Middle East
+                </h3>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">
+              <span style="color: var(--primary)">Middle</span> East Office
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Dubai, UAE - Refining and regional distribution center
+            </p>
+            <div class="space-y-4 text-gray-700">
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="font-medium">
+                  <a
+                    href="mailto:middleeast@asianton.com"
+                    class="hover:text-[var(--primary)] transition"
+                    >middleeast@asianton.com</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Phone</p>
+                <p class="font-medium">+971 (4) 000 0000</p>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="contact-card fade-up delay-2">
+            <div
+              class="mb-6 h-40 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-4xl mb-2" style="color: var(--primary)">↗</div>
+                <h3 class="text-xl font-bold" style="color: var(--primary)">
+                  East Africa
+                </h3>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">
+              <span style="color: var(--primary)">East</span> Africa Office
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Nairobi, Kenya - Mining relationships and operations
+            </p>
+            <div class="space-y-4 text-gray-700">
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="font-medium">
+                  <a
+                    href="mailto:africa@asianton.com"
+                    class="hover:text-[var(--primary)] transition"
+                    >africa@asianton.com</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Phone</p>
+                <p class="font-medium">+254 (20) 000 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- FORM - Changed to dark background to match alternating pattern -->
+    <section class="py-16 md:py-20 bg-[#3A3A3A]">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12 fade-down">
+          <h2 class="text-4xl font-bold mb-3 text-white">
+            Send us a <span style="color: var(--primary)">Message</span>
+          </h2>
+          <p class="text-gray-300">
+            Fill out the form and our team will get back to you within 24 hours.
+          </p>
+        </div>
+
+        <form
+          class="bg-[#4A4A4A] border border-gray-600 hover:border-[#00A7E1] transition group p-6 md:p-8 rounded-2xl"
+        >
+          <div class="grid gap-6">
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="px-4 py-3 rounded-lg bg-[#3A3A3A] border-gray-600 text-white placeholder-gray-400"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="px-4 py-3 rounded-lg bg-[#3A3A3A] border-gray-600 text-white placeholder-gray-400"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Company Name"
+              class="px-4 py-3 rounded-lg bg-[#3A3A3A] border-gray-600 text-white placeholder-gray-400"
+            />
+            <select
+              class="px-4 py-3 rounded-lg bg-[#3A3A3A] border-gray-600 text-white"
+            >
+              <option class="bg-[#3A3A3A]">Commodity Trading</option>
+              <option class="bg-[#3A3A3A]">Logistics & Chartering</option>
+              <option class="bg-[#3A3A3A]">Prooftoof Software</option>
+            </select>
+            <textarea
+              rows="5"
+              placeholder="Your Message..."
+              class="px-4 py-3 rounded-lg bg-[#3A3A3A] border-gray-600 text-white placeholder-gray-400"
+            ></textarea>
+
+            <button class="btn-primary py-4 rounded-full text-lg font-semibold">
+              Send Message →
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ Section - Uncommented and updated -->
+    <!-- <section class="py-14 md:py-18 bg-gradient-to-b from-white to-gray-50">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-10 fade-down">
+          Frequently Asked <span style="color: var(--primary)">Questions</span>
+        </h2>
+
+        <div class="space-y-6">
+          <div class="contact-card fade-up delay-1">
+            <h3 class="font-bold mb-3 text-xl">
+              How long does a typical transaction take?
+            </h3>
+            <p class="text-gray-600">
+              Typically 15–30 days from agreement to delivery, depending on the
+              commodity and destination.
+            </p>
+          </div>
+
+          <div class="contact-card fade-up delay-2">
+            <h3 class="font-bold mb-3 text-xl">
+              What commodities do you trade?
+            </h3>
+            <p class="text-gray-600">
+              We specialize in metals, minerals, and critical commodities
+              including gold, copper, steel, and coal.
+            </p>
+          </div>
+
+          <div class="contact-card fade-up delay-3">
+            <h3 class="font-bold mb-3 text-xl">What is Prooftoof?</h3>
+            <p class="text-gray-600">
+              A proprietary platform for full trade transparency, providing
+              real-time tracking and documentation throughout the supply chain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- CTA Strip (Matching index page pattern) -->
+    <section class="py-16 md:py-20 bg-white border-y border-gray-200">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8"
+      >
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 text-center md:text-left"
+        >
+          Ready to start your next
+          <span style="color: var(--primary)">global trade project?</span>
+        </h2>
+        <a
+          href="contact.html"
+          class="btn-primary px-8 sm:px-10 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold hover:scale-105 transition-transform whitespace-nowrap"
+        >
+          Get in Touch →
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER - Updated to dark background -->
+    <footer class="bg-[#2A2A2A] border-t border-gray-700 py-12">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-bold mb-3 text-white">ASIANTON</h4>
+          <p class="text-gray-400 text-sm">
+            Global commodity and logistics partner.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-bold mb-3 text-white">Services</h5>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>
+              <a href="services.html" class="hover:text-[#00A7E1] transition"
+                >Commodity Trading</a
+              >
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-[#00A7E1] transition"
+                >Logistics</a
+              >
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-[#00A7E1] transition"
+                >Prooftoof</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold mb-3 text-white">Company</h5>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>
+              <a href="about.html" class="hover:text-[#00A7E1] transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-[#00A7E1] transition"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#00A7E1] transition"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold mb-3 text-white">Global Presence</h5>
+          <p class="text-gray-400 text-sm">
+            Far East • Middle East • East Africa
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="text-center text-gray-500 text-sm mt-8 pt-8 border-t border-gray-700"
+      >
+        © 2025 ASIANTON. All rights reserved. | The Tōng Principle in Action
+      </div>
+    </footer>
+  </body>
+</html>
